@@ -2,6 +2,7 @@ Overview:
 
 This project implements a GPS-independent autonomous drone landing system using computer vision. The drone detects a colored landing marker via its onboard camera, enabling precise navigation and landing without reliance on external signals like GPS or internet connectivity. This solution is particularly valuable in scenarios where GPS is unavailable or unreliable, such as military operations, disaster zones, or space applications.
 
+
 Features:
 
 Spiral Search Algorithm: Expands the drone's search radius systematically when the landing marker is not immediately visible.
@@ -14,6 +15,7 @@ Hardware Integration: Compatible with the DJI Tello drone, leveraging its progra
 
 
 Process: 
+
 The project began by identifying the limitations of GPS-dependent drones, such as vulnerability to jamming and signal loss in critical scenarios. Initially, we developed and tested the algorithm in a Gazebo simulation using ROS2 with the SJTU drone, achieving successful autonomous landing in a virtual environment. However, due to the unavailability of the physical SJTU drone, we transitioned to real-world implementation using a DJI Tello drone. A Python-based vision algorithm was designed to detect a colored landing marker via the onboard camera, leveraging OpenCV for color filtering and contour detection. If the marker was not immediately visible, the drone executed a spiral search pattern to locate it before centering and performing a controlled descent. The system utilized the DJITelloPy library for flight control and NumPy for image processing. Extensive testing—including indoor, outdoor, and varying marker sizes—validated functionality in dynamic environments. 
 
 
