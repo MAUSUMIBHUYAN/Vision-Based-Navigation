@@ -9,7 +9,17 @@ Marker Detection: Uses OpenCV for real-time image processing, including color fi
 Precision Landing: Adjusts the drone's position to center over the marker and performs a controlled vertical descent.
 Hardware Integration: Compatible with the DJI Tello drone, leveraging its programmable interface for autonomous control.
 
-For all demo videos, visit the Google Drive folder: https://drive.google.com/drive/folders/1rKlSrs1aT5kpTJHOXoW-QnA5ep1nt-Zh?usp=drive_link
+Process: 
+The project began by identifying the limitations of GPS-dependent drones, such as vulnerability to jamming and signal loss in critical scenarios. Initially, we developed and tested the algorithm in a Gazebo simulation using ROS2 with the SJTU drone, achieving successful autonomous landing in a virtual environment. However, due to the unavailability of the physical SJTU drone, we transitioned to real-world implementation using a DJI Tello drone. A Python-based vision algorithm was designed to detect a colored landing marker via the onboard camera, leveraging OpenCV for color filtering and contour detection. If the marker was not immediately visible, the drone executed a spiral search pattern to locate it before centering and performing a controlled descent. The system utilized the DJITelloPy library for flight control and NumPy for image processing. Extensive testing—including indoor, outdoor, and varying marker sizes—validated functionality in dynamic environments. 
+
+Gazebo simulation videos:
+
+https://github.com/user-attachments/assets/17a3521c-14e7-4a77-81a1-1fb43738acc9
+https://github.com/user-attachments/assets/3cc094bf-c7b1-42a9-8466-42fe06d24fe1
+
+
+
+For all real world demo videos, visit the Google Drive folder: https://drive.google.com/drive/folders/1rKlSrs1aT5kpTJHOXoW-QnA5ep1nt-Zh?usp=drive_link
 
 Tools and Technologies:
 
